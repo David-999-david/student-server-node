@@ -1,91 +1,124 @@
-const db = require("../../config/db");
+const { success } = require("zod");
+const {
+  getGender,
+  getJoinStudentsQuery,
+  getJoinStudents,
+  newStudents,
+  updateStudent,
+  studentExist,
+  getJoinStudentId,
+  deleteS,
+} = require("../../service/student/student.service");
+const ApiError = require("../../utils/ApiError");
 
-async function getGender() {
-  const sql = "select * from gender";
-
-  const result = await db.query(sql);
-  return result.rows;
+async function allGender(req, res, next) {
+  try {
+    const genders = await getGender();
+    return res.status(200).json({
+      count: genders.length,
+      error: false,
+      success: true,
+      data: genders,
+    });
+  } catch (e) {
+    next(e);
+  }
 }
 
-async function getJoinStudents() {
-  const sql = `
-    select
-    s.id,
-    s.name,
-    s.email,
-    s.address,
-    s.phone,
-    s.status,
-    g.name as "gender",
-    s.created_at,
-    coalesce(
-    jsonb_agg(
-    jsonb_build_object(
-    'id',c.id,
-    'name',c.name,
-    'description',c.description,
-    'course_status',c.status,
-    'current_students',c.current_students,
-    'student_limit',c.student_limit,
-    'start_date',c.start_date,
-    'end_date',c.end_date,
-    'created_at',c.created_at
-    )
-    order by c.created_at desc
-    ) filter (where c.id is not null),
-     '[]'::jsonb
-    ) as courses
-    from student s
-    left join gender g on g.id = s.gender_id
-    left join student_course sc on sc.student_id = s.id
-    left join course c on c.id = sc.course_id
-    group by s.id,s.name,s.email,s.address,s.phone,s.status,g.name,s.created_at
-    order by s.created_at
-    `;
-  const results = await db.query(sql);
-  return results.rows;
+async function getJoinS(req, res, next) {
+  const query = req.query.q;
+  try {
+    let students;
+    if (query) {
+      students = await getJoinStudentsQuery(query);
+    } else {
+      students = await getJoinStudents();
+    }
+    return res.status(200).json({
+      count: students.length,
+      error: false,
+      success: true,
+      data: students,
+    });
+  } catch (e) {
+    next(e);
+  }
 }
 
-async function getJoinStudentsQuery(query) {
-  const pattern = `%${query}%`;
-  const sql = `
-    select
-    s.id,
-    s.name,
-    s.email,
-    s.address,
-    s.phone,
-    s.status,
-    g.name as "gender",
-    s.created_at,
-    coalesce(
-    jsonb_agg(
-    jsonb_build_object(
-    'id',c.id,
-    'name',c.name,
-    'description',c.description,
-    'course_status',c.status,
-    'current_students',c.current_students,
-    'student_limit',c.student_limit,
-    'start_date',c.start_date,
-    'end_date',c.end_date,
-    'created_at',c.created_at
-    )
-    order by c.created_at desc
-    ) filter (where c.id is not null),
-     '[]'::jsonb
-    ) as courses
-    from student s
-    left join gender g on g.id = s.gender_id
-    left join student_course sc on sc.student_id = s.id
-    left join course c on c.id = sc.course_id
-    where s.name ilike $1 or
-    s.email ilike $1
-    group by s.id,s.name,s.email,s.address,s.phone,s.status,g.name,s.created_at
-    order by s.created_at
-    `;
-  const results = await db.query(sql, [pattern]);
-  return results.rows;
+async function getJoinSId(req, res, next) {
+  const { id } = req.params;
+  try {
+    const result = await getJoinStudentId(id);
+    if (!result) {
+      return res.status(404).json({
+        error: true,
+        success: false,
+        message: `Can't find student with id=${id}`,
+      });
+    }
+    return res.status(200).json({
+      error: false,
+      success: true,
+      data: result,
+    });
+  } catch (e) {
+    next(e);
+  }
 }
 
-module.exports = { getGender, getJoinStudents, getJoinStudentsQuery };
+async function addStudents(req, res, next) {
+  const student = req.body;
+  try {
+    result = await newStudents(student);
+    return res.status(201).json({
+      error: false,
+      success: true,
+      data: result,
+    });
+  } catch (e) {
+    next(e);
+  }
+}
+
+async function editStudent(req, res, next) {
+  const { id } = req.params;
+  const student = req.body;
+  try {
+    const exist = await studentExist(id);
+
+    if (!exist) {
+      return res.status(404).json({
+        error: true,
+        success: false,
+        message: `Student with id=${id} not found`,
+      });
+    }
+
+    const result = await updateStudent(id, student);
+
+    return res.status(200).json({
+      error: false,
+      success: true,
+      data: result,
+    });
+  } catch (e) {
+    next(e);
+  }
+}
+
+async function removeStudent(req, res, next) {
+  const {id} = req.params;
+  try {
+    await deleteS(id);
+    return res.status(200).json({
+      error: false,
+      success: true,
+      data: `Delete student with id=${id} success!`
+    })
+  }
+   catch (e){
+    next(e);
+   }
+}
+
+module.exports = { allGender, getJoinS, getJoinSId, addStudents, editStudent , removeStudent };

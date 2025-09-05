@@ -14,3 +14,8 @@
 [2m2025-09-02-23-05-37[22m [31merror[39m: syntax error at or near "("
 [2m2025-09-02-23-06-13[22m [31merror[39m: missing FROM-clause entry for table "s"
 [2m2025-09-02-23-07-22[22m [31merror[39m: students is not defined
+[2m2025-09-04-08-59-16[22m [31merror[39m: Unexpected token 'd', ...""status": ddff
+}" is not valid JSON
+[2m2025-09-04-14-17-13[22m [31merror[39m: loggers.info is not a function
+[2m2025-09-04-16-51-52[22m [31merror[39m: Cannot read properties of undefined (reading 'traits')
+[2m2025-09-04-20-10-30[22m [31merror[39m: syntax error at or near "where"

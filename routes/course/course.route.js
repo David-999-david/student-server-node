@@ -1,4 +1,4 @@
-const { getJoinC } = require("../../service/course/course.service");
+const { getJoinC } = require("../../controller/course/course.controller");
 
 const router = require("express").Router();
 

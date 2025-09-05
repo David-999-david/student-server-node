@@ -1,3 +1,4 @@
+const { loggers } = require("winston");
 const { ZodError } = require("zod");
 
 function validate(schema, property = "body") {
@@ -7,6 +8,7 @@ function validate(schema, property = "body") {
       next();
     } catch (err) {
       if (err instanceof ZodError) {
+        console.log(err.message)
         return res.status(422).json({
           error: true,
           success: false,
