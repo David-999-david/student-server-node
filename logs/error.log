@@ -19,3 +19,9 @@
 [2m2025-09-04-14-17-13[22m [31merror[39m: loggers.info is not a function
 [2m2025-09-04-16-51-52[22m [31merror[39m: Cannot read properties of undefined (reading 'traits')
 [2m2025-09-04-20-10-30[22m [31merror[39m: syntax error at or near "where"
+[2m2025-09-05-21-33-56[22m [31merror[39m: duplicate key value violates unique constraint "student_email_key"
+[2m2025-09-05-21-35-46[22m [31merror[39m: duplicate key value violates unique constraint "student_email_key"
+[2m2025-09-06-09-01-47[22m [31merror[39m: schema "s" does not exist
+[2m2025-09-06-09-03-50[22m [31merror[39m: schema "s" does not exist
+[2m2025-09-06-13-06-30[22m [31merror[39m: req is not defined
+[2m2025-09-06-13-07-49[22m [31merror[39m: res.status is not a function

@@ -8,7 +8,7 @@ async function getGender() {
   return result.rows;
 }
 
-async function getJoinStudents() {
+async function getJoinStudents(limit, offset) {
   const sql = `
     select
     s.id,
@@ -42,12 +42,17 @@ async function getJoinStudents() {
     left join course c on c.id = sc.course_id
     group by s.id,s.name,s.email,s.address,s.phone,s.status,g.name,s.created_at
     order by s.created_at desc
+    limit $1 offset $2
     `;
-  const results = await db.query(sql);
-  return results.rows;
+  const results = await db.query(sql, [limit, offset]);
+
+  const countsql = `select count(*)::int as total from student`;
+  const countRes = await db.query(countsql);
+
+  return { students: results.rows, count: countRes.rows[0].total };
 }
 
-async function getJoinStudentsQuery(query) {
+async function getJoinStudentsQuery(query, limit, offset) {
   const pattern = `%${query}%`;
   const sql = `
     select
@@ -84,9 +89,15 @@ async function getJoinStudentsQuery(query) {
     s.email ilike $1
     group by s.id,s.name,s.email,s.address,s.phone,s.status,g.name,s.created_at
     order by s.created_at desc
+    limit $2 offset $3
     `;
-  const results = await db.query(sql, [pattern]);
-  return results.rows;
+  const results = await db.query(sql, [pattern, limit, offset]);
+
+  const countsql = `select count(*)::int as total from student
+   where name ilike $1 or email ilike $1`;
+  const countRes = await db.query(countsql, [pattern]);
+
+  return { students: results.rows, count: countRes.rows[0].total };
 }
 
 async function getJoinStudentId(id) {

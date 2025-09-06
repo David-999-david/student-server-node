@@ -27,17 +27,23 @@ async function allGender(req, res, next) {
 
 async function getJoinS(req, res, next) {
   const query = req.query.q;
+  const page = Math.max(1, Number(req.query.p ?? 1));
+  const limit = Math.min(100, Number(req.query.l ?? 20));
+
+  const offset = (page - 1) * limit;
   try {
-    let students;
+    let results;
     if (query) {
-      students = await getJoinStudentsQuery(query);
+      results = await getJoinStudentsQuery(query, limit, offset);
     } else {
-      students = await getJoinStudents();
+      results = await getJoinStudents(limit, offset);
     }
+    const { students, count } = results;
+    const totalPages = Math.max(1, Math.ceil(count / limit))
     return res.status(200).json({
-      count: students.length,
       error: false,
       success: true,
+      meta: {totalPages, count},
       data: students,
     });
   } catch (e) {
@@ -107,18 +113,24 @@ async function editStudent(req, res, next) {
 }
 
 async function removeStudent(req, res, next) {
-  const {id} = req.params;
+  const { id } = req.params;
   try {
     await deleteS(id);
     return res.status(200).json({
       error: false,
       success: true,
-      data: `Delete student with id=${id} success!`
-    })
-  }
-   catch (e){
+      data: `Delete student with id=${id} success!`,
+    });
+  } catch (e) {
     next(e);
-   }
+  }
 }
 
-module.exports = { allGender, getJoinS, getJoinSId, addStudents, editStudent , removeStudent };
+module.exports = {
+  allGender,
+  getJoinS,
+  getJoinSId,
+  addStudents,
+  editStudent,
+  removeStudent,
+};
