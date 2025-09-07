@@ -2,6 +2,8 @@ const {
   getJoinCourses,
   getJoinCoursesQuery,
   addCourse,
+  getIdC,
+  updateC,
 } = require("../../service/course/course.service");
 
 async function getJoinC(req, res, next) {
@@ -44,4 +46,35 @@ async function newCourse(req, res, next) {
   }
 }
 
-module.exports = { getJoinC, newCourse };
+async function findIdC(req, res, next) {
+  const {id} = req.params;
+  try {
+    const result = await getIdC(id);
+    return res.status(200).json({
+      error: false,
+      success: true,
+      data: result
+    })
+  }
+  catch (e){
+    next(e);
+  }
+}
+
+async function updateCourse(req, res, next) {
+  const {id} = req.params;
+  const course = req.body;
+  try {
+    const result = await updateC(id,course);
+    return res.status(200).json({
+      error: false,
+      success: true,
+      data: result
+    })
+  }
+  catch (e){
+    next(e);
+  }
+}
+
+module.exports = { getJoinC, newCourse, findIdC, updateCourse };
