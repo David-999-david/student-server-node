@@ -200,10 +200,115 @@ async function updateC(id, course) {
   }
 }
 
+async function deleteC(id) {
+  const sql = `delete from course where id =$1`;
+  try {
+    await db.query(sql, [id]);
+  } catch (e) {
+    throw new ApiError(e.status || 500, e.message || "Internal Server Error");
+  }
+}
+
+async function joinSIds(cId, sIds) {
+  const cSql = `
+  select student_limit,current_students
+  from course where id=$1
+  and status = true
+  `;
+  const eSql = `select 1 from student_course where
+  course_id = $1 and student_id = $2
+  `;
+  const sSql = `select 1 from student where id=$1 and status=true`;
+  const jSql = `
+  insert into student_course
+  (student_id,course_id)
+  values
+  ($1, $2)
+  on conflict do nothing
+  `;
+  const uSql = `
+  update course set
+  current_students = least(student_limit,current_students + $2),
+  updated_at = now()
+  where id = $1
+  `;
+  let result = {
+    joins: [],
+    skips: [],
+    courseFull: false,
+  };
+  try {
+    const checkRes = await db.query(cSql, [cId]);
+    if (checkRes.rowCount !== 1) {
+      throw new ApiError(403, `Course with id=${cId} of stuats is Inactive`);
+    }
+    const { student_limit, current_students } = checkRes.rows[0];
+    let remaining = student_limit - current_students;
+    if (remaining <= 0) {
+      result.courseFull = true;
+      return result;
+    }
+    let joinCount = 0;
+    for (let i of sIds) {
+      if (remaining === 0) {
+        result["courseFull"] = true;
+        result['skips'].push({
+          sId: i,
+          reason: `Student id=${i} cannot join for Course id=${cId} courseFull`
+        })
+        break;
+      }
+      const eRes = await db.query(eSql, [cId, i]);
+      if (eRes.rowCount === 1) {
+        result["skips"].push({
+          sId: i,
+          reason: `Student id${i} is already join to Course id${cId}`,
+        });
+        continue;
+      }
+      const sRes = await db.query(sSql, [i]);
+      if (sRes.rowCount !== 1) {
+        result["skips"].push({
+          sId: i,
+          reason: `Student id=${i} of status is inactive`,
+        });
+        continue;
+      }
+      const jRes = await db.query(jSql, [i, cId]);
+      if (jRes.rowCount !== 1) {
+        result["skips"].push({
+          sId: i,
+          reason: `Failed to join student id=${i} to Course id=${cId}`,
+        });
+        continue;
+      }
+      result["joins"].push({
+        sId: i,
+      });
+      remaining -= 1;
+      joinCount += 1;
+    }
+    if (joinCount > 0) {
+      await db.query(uSql, [cId, joinCount]);
+    }
+    return result;
+  } catch (e) {
+    throw new ApiError(
+      e.status || 500,
+      e.message ||
+        `Error when 
+      students join with Course with id=${cId}
+      `
+    );
+  }
+}
+
 module.exports = {
   getJoinCourses,
   getJoinCoursesQuery,
   addCourse,
   getIdC,
   updateC,
+  deleteC,
+  joinSIds,
 };

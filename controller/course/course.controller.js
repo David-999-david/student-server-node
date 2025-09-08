@@ -4,6 +4,8 @@ const {
   addCourse,
   getIdC,
   updateC,
+  deleteC,
+  joinSIds,
 } = require("../../service/course/course.service");
 
 async function getJoinC(req, res, next) {
@@ -38,43 +40,76 @@ async function newCourse(req, res, next) {
     return res.status(201).json({
       error: false,
       success: true,
-      data: Res
-    })
-  }
-  catch (e){
+      data: Res,
+    });
+  } catch (e) {
     next(e);
   }
 }
 
 async function findIdC(req, res, next) {
-  const {id} = req.params;
+  const { id } = req.params;
   try {
     const result = await getIdC(id);
     return res.status(200).json({
       error: false,
       success: true,
-      data: result
-    })
-  }
-  catch (e){
+      data: result,
+    });
+  } catch (e) {
     next(e);
   }
 }
 
 async function updateCourse(req, res, next) {
-  const {id} = req.params;
+  const { id } = req.params;
   const course = req.body;
   try {
-    const result = await updateC(id,course);
+    const result = await updateC(id, course);
     return res.status(200).json({
       error: false,
       success: true,
-      data: result
-    })
-  }
-  catch (e){
+      data: result,
+    });
+  } catch (e) {
     next(e);
   }
 }
 
-module.exports = { getJoinC, newCourse, findIdC, updateCourse };
+async function deleteCourse(req, res, next) {
+  const { id } = req.params;
+  try {
+    await deleteC(id);
+    return res.status(200).json({
+      error: false,
+      success: true,
+      message: `Delete course with id =${id} success`,
+    });
+  } catch (e) {
+    next(e);
+  }
+}
+
+async function joinStudents(req, res, next) {
+  const { id } = req.params;
+  const { studentIds } = req.body;
+  try {
+    const result = await joinSIds(id, studentIds);
+    return res.status(200).json({
+      error: false,
+      success: true,
+      data: result
+    });
+  } catch (e) {
+    next(e);
+  }
+}
+
+module.exports = {
+  getJoinC,
+  newCourse,
+  findIdC,
+  updateCourse,
+  deleteCourse,
+  joinStudents,
+};

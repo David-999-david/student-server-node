@@ -4583,3 +4583,305 @@
 [2m2025-09-07-11-55-06[22m [36mhttp[39m: GET /api/courses/244 304 - - 37.139 ms
 [2m2025-09-07-11-55-20[22m [36mhttp[39m: PUT /api/courses/244 200 364 - 36.747 ms
 [2m2025-09-07-11-55-20[22m [36mhttp[39m: GET /api/courses/244 200 3122 - 6.890 ms
+[2m2025-09-07-17-23-31[22m [32minfo[39m: Success => connect with database
+[2m2025-09-07-17-23-31[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-07-17-26-41[22m [36mhttp[39m: GET /api/courses/244 304 - - 61.035 ms
+[2m2025-09-07-17-26-44[22m [36mhttp[39m: GET /api/students?p=1 200 6721 - 7.293 ms
+[2m2025-09-07-17-26-47[22m [36mhttp[39m: GET /api/students/465 304 - - 3.972 ms
+[2m2025-09-07-17-26-47[22m [36mhttp[39m: GET /api/students/genders 304 - - 2.585 ms
+[2m2025-09-07-17-26-48[22m [36mhttp[39m: GET /api/students?p=1 304 - - 5.566 ms
+[2m2025-09-07-17-26-51[22m [36mhttp[39m: GET /api/students/397 200 846 - 3.410 ms
+[2m2025-09-07-17-26-51[22m [36mhttp[39m: GET /api/students/genders 304 - - 41.611 ms
+[2m2025-09-07-17-26-53[22m [36mhttp[39m: GET /api/courses?p=1 200 9122 - 9.083 ms
+[2m2025-09-07-17-26-56[22m [36mhttp[39m: GET /api/courses/280 304 - - 2.867 ms
+[2m2025-09-07-17-26-57[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.959 ms
+[2m2025-09-07-17-27-01[22m [36mhttp[39m: GET /api/courses/244 304 - - 3.140 ms
+[2m2025-09-07-17-27-13[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 42.570 ms
+[2m2025-09-07-17-27-15[22m [36mhttp[39m: GET /api/students?p=1 304 - - 4.256 ms
+[2m2025-09-07-17-27-19[22m [36mhttp[39m: GET /api/students/397 304 - - 2.463 ms
+[2m2025-09-07-17-27-19[22m [36mhttp[39m: GET /api/students/genders 304 - - 0.948 ms
+[2m2025-09-07-17-27-27[22m [36mhttp[39m: PUT /api/students/397 200 294 - 5.700 ms
+[2m2025-09-07-17-27-27[22m [36mhttp[39m: GET /api/students/397 200 847 - 1.922 ms
+[2m2025-09-07-17-27-31[22m [36mhttp[39m: GET /api/students?p=1 200 6722 - 4.134 ms
+[2m2025-09-07-17-27-36[22m [36mhttp[39m: GET /api/courses?p=1 200 9123 - 3.935 ms
+[2m2025-09-07-17-27-40[22m [36mhttp[39m: GET /api/courses/244 200 3123 - 2.563 ms
+[2m2025-09-07-17-27-50[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.829 ms
+[2m2025-09-07-17-27-51[22m [36mhttp[39m: GET /api/students?p=1 304 - - 3.481 ms
+[2m2025-09-07-17-27-54[22m [36mhttp[39m: GET /api/students/genders 304 - - 1.505 ms
+[2m2025-09-07-17-27-54[22m [36mhttp[39m: GET /api/students/397 304 - - 43.009 ms
+[2m2025-09-07-17-27-57[22m [36mhttp[39m: GET /api/students?p=1 304 - - 5.009 ms
+[2m2025-09-07-17-27-58[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.573 ms
+[2m2025-09-07-17-28-04[22m [36mhttp[39m: GET /api/courses/244 304 - - 1.923 ms
+[2m2025-09-07-17-28-15[22m [36mhttp[39m: PUT /api/courses/244 200 365 - 38.254 ms
+[2m2025-09-07-17-28-15[22m [36mhttp[39m: GET /api/courses/244 200 3124 - 6.243 ms
+[2m2025-09-07-17-28-21[22m [36mhttp[39m: GET /api/students?p=1 200 6723 - 5.219 ms
+[2m2025-09-07-17-28-22[22m [36mhttp[39m: GET /api/students/genders 304 - - 1.798 ms
+[2m2025-09-07-17-28-22[22m [36mhttp[39m: GET /api/students/397 200 848 - 39.700 ms
+[2m2025-09-07-17-28-30[22m [36mhttp[39m: GET /api/students?p=1 304 - - 5.809 ms
+[2m2025-09-07-17-29-28[22m [36mhttp[39m: GET /api/courses?p=1 200 9124 - 49.385 ms
+[2m2025-09-07-17-30-23[22m [36mhttp[39m: POST /api/courses 201 274 - 37.682 ms
+[2m2025-09-07-17-30-23[22m [36mhttp[39m: GET /api/courses?p=1 200 9064 - 9.071 ms
+[2m2025-09-07-17-32-53[22m [36mhttp[39m: GET /api/courses/281 200 270 - 45.973 ms
+[2m2025-09-07-17-33-33[22m [36mhttp[39m: PUT /api/courses/281 200 295 - 40.380 ms
+[2m2025-09-07-17-33-33[22m [36mhttp[39m: GET /api/courses/281 200 269 - 6.525 ms
+[2m2025-09-07-19-39-47[22m [32minfo[39m: Success => connect with database
+[2m2025-09-07-19-39-47[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-07-19-43-23[22m [32minfo[39m: Success => connect with database
+[2m2025-09-07-19-43-23[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-07-19-43-27[22m [36mhttp[39m: GET /api/courses?p=1 200 9063 - 16.908 ms
+[2m2025-09-07-19-43-40[22m [36mhttp[39m: GET /api/courses/281 304 - - 46.794 ms
+[2m2025-09-07-19-43-43[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 5.296 ms
+[2m2025-09-07-19-43-45[22m [36mhttp[39m: GET /api/courses/281 304 - - 2.354 ms
+[2m2025-09-07-19-43-47[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 4.080 ms
+[2m2025-09-07-19-43-48[22m [36mhttp[39m: GET /api/courses/281 304 - - 1.806 ms
+[2m2025-09-07-19-43-49[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 4.015 ms
+[2m2025-09-07-19-43-50[22m [36mhttp[39m: GET /api/courses/281 304 - - 1.667 ms
+[2m2025-09-07-19-43-51[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 5.465 ms
+[2m2025-09-07-19-43-53[22m [36mhttp[39m: GET /api/courses/281 304 - - 1.523 ms
+[2m2025-09-07-19-43-54[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 4.382 ms
+[2m2025-09-07-19-44-02[22m [36mhttp[39m: GET /api/courses/281 304 - - 2.383 ms
+[2m2025-09-07-19-44-26[22m [36mhttp[39m: DELETE /api/courses/281 200 77 - 150.321 ms
+[2m2025-09-07-19-44-47[22m [31merror[39m: Not found course with id=281
+[2m2025-09-07-19-44-47[22m [36mhttp[39m: GET /api/courses/281 404 58 - 142.915 ms
+[2m2025-09-07-19-44-52[22m [31merror[39m: Not found course with id=281
+[2m2025-09-07-19-44-52[22m [36mhttp[39m: GET /api/courses/281 404 58 - 2.401 ms
+[2m2025-09-07-19-44-53[22m [36mhttp[39m: GET /api/courses?p=1 200 9124 - 5.423 ms
+[2m2025-09-07-19-44-54[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.422 ms
+[2m2025-09-07-19-44-54[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.761 ms
+[2m2025-09-07-19-44-56[22m [36mhttp[39m: GET /api/courses/280 304 - - 1.425 ms
+[2m2025-09-07-19-44-58[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 4.037 ms
+[2m2025-09-07-19-49-55[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 43.304 ms
+[2m2025-09-07-19-50-00[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 4.175 ms
+[2m2025-09-07-19-50-02[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 4.137 ms
+[2m2025-09-07-19-50-09[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.481 ms
+[2m2025-09-07-19-50-11[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.753 ms
+[2m2025-09-07-19-50-13[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 4.649 ms
+[2m2025-09-07-19-50-48[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 40.975 ms
+[2m2025-09-07-19-50-53[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 5.212 ms
+[2m2025-09-07-19-51-11[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 51.686 ms
+[2m2025-09-07-19-51-23[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 46.110 ms
+[2m2025-09-07-19-52-25[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 50.021 ms
+[2m2025-09-07-19-52-34[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.841 ms
+[2m2025-09-07-19-52-47[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 41.011 ms
+[2m2025-09-07-19-53-07[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 43.622 ms
+[2m2025-09-07-19-53-18[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 51.048 ms
+[2m2025-09-07-19-53-33[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 39.747 ms
+[2m2025-09-07-19-53-39[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.782 ms
+[2m2025-09-07-19-53-51[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 41.682 ms
+[2m2025-09-07-19-54-04[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 41.435 ms
+[2m2025-09-07-19-54-12[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.888 ms
+[2m2025-09-07-19-54-19[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 4.160 ms
+[2m2025-09-07-19-54-29[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 44.292 ms
+[2m2025-09-07-19-54-36[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.905 ms
+[2m2025-09-07-19-55-04[22m [36mhttp[39m: GET /api/courses?p=2 200 9100 - 42.452 ms
+[2m2025-09-07-19-55-05[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.379 ms
+[2m2025-09-07-19-55-07[22m [36mhttp[39m: GET /api/courses?p=2 304 - - 3.225 ms
+[2m2025-09-07-19-55-08[22m [36mhttp[39m: GET /api/courses?p=3 200 11807 - 3.756 ms
+[2m2025-09-07-19-55-10[22m [36mhttp[39m: GET /api/courses?p=4 200 12202 - 3.300 ms
+[2m2025-09-07-19-55-12[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 4.145 ms
+[2m2025-09-07-19-55-14[22m [36mhttp[39m: GET /api/courses?p=2 304 - - 3.152 ms
+[2m2025-09-07-19-55-15[22m [36mhttp[39m: GET /api/courses?p=3 304 - - 3.583 ms
+[2m2025-09-07-19-55-16[22m [36mhttp[39m: GET /api/courses?p=4 304 - - 3.534 ms
+[2m2025-09-07-19-55-18[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.517 ms
+[2m2025-09-07-19-55-19[22m [36mhttp[39m: GET /api/courses?p=2 304 - - 4.023 ms
+[2m2025-09-07-19-55-20[22m [36mhttp[39m: GET /api/courses?p=3 304 - - 3.269 ms
+[2m2025-09-07-19-55-22[22m [36mhttp[39m: GET /api/courses?p=4 304 - - 3.142 ms
+[2m2025-09-07-19-56-40[22m [36mhttp[39m: GET /api/courses?p=4 304 - - 43.644 ms
+[2m2025-09-07-19-57-10[22m [36mhttp[39m: GET /api/courses?p=4 304 - - 42.701 ms
+[2m2025-09-07-19-57-38[22m [36mhttp[39m: GET /api/courses?p=4 304 - - 43.254 ms
+[2m2025-09-07-19-57-54[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 42.325 ms
+[2m2025-09-07-19-58-10[22m [36mhttp[39m: GET /api/students?p=1 304 - - 44.231 ms
+[2m2025-09-07-19-58-13[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 4.254 ms
+[2m2025-09-07-19-58-44[22m [36mhttp[39m: GET /api/students?p=1 304 - - 45.037 ms
+[2m2025-09-07-19-58-46[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 4.484 ms
+[2m2025-09-07-19-59-10[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 46.069 ms
+[2m2025-09-07-19-59-15[22m [36mhttp[39m: DELETE /api/courses/280 200 77 - 2.736 ms
+[2m2025-09-07-19-59-15[22m [31merror[39m: Not found course with id=280
+[2m2025-09-07-19-59-15[22m [36mhttp[39m: GET /api/courses/280 404 58 - 2.077 ms
+[2m2025-09-07-19-59-25[22m [31merror[39m: Not found course with id=280
+[2m2025-09-07-19-59-25[22m [36mhttp[39m: GET /api/courses/280 404 58 - 40.517 ms
+[2m2025-09-07-19-59-26[22m [31merror[39m: Not found course with id=280
+[2m2025-09-07-19-59-26[22m [36mhttp[39m: GET /api/courses/280 404 58 - 2.324 ms
+[2m2025-09-07-19-59-27[22m [36mhttp[39m: GET /api/courses?p=1 200 9172 - 4.484 ms
+[2m2025-09-07-19-59-58[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 150.027 ms
+[2m2025-09-07-20-00-12[22m [36mhttp[39m: DELETE /api/courses/279 200 77 - 35.288 ms
+[2m2025-09-07-20-00-12[22m [36mhttp[39m: GET /api/courses?p=1 200 9230 - 7.528 ms
+[2m2025-09-07-20-00-14[22m [36mhttp[39m: DELETE /api/courses/278 200 77 - 1.427 ms
+[2m2025-09-07-20-00-14[22m [36mhttp[39m: GET /api/courses?p=1 200 9292 - 3.449 ms
+[2m2025-09-07-20-00-18[22m [36mhttp[39m: DELETE /api/courses/277 200 77 - 3.818 ms
+[2m2025-09-07-20-00-18[22m [36mhttp[39m: GET /api/courses?p=1 200 9351 - 2.927 ms
+[2m2025-09-07-20-00-18[22m [36mhttp[39m: DELETE /api/courses/276 200 77 - 4.318 ms
+[2m2025-09-07-20-00-18[22m [36mhttp[39m: GET /api/courses?p=1 200 9624 - 4.059 ms
+[2m2025-09-07-20-00-25[22m [36mhttp[39m: DELETE /api/courses/275 200 77 - 30.310 ms
+[2m2025-09-07-20-00-25[22m [36mhttp[39m: GET /api/courses?p=1 200 9890 - 3.186 ms
+[2m2025-09-07-21-04-11[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 161.007 ms
+[2m2025-09-07-22-11-30[22m [36mhttp[39m: GET /api/students/genders 304 - - 45.767 ms
+[2m2025-09-07-22-11-30[22m [36mhttp[39m: GET /api/students/282 304 - - 61.057 ms
+[2m2025-09-07-22-11-38[22m [36mhttp[39m: GET /api/courses?p=2 200 9343 - 6.500 ms
+[2m2025-09-07-22-11-39[22m [36mhttp[39m: GET /api/courses?p=3 200 15680 - 5.635 ms
+[2m2025-09-07-22-11-40[22m [36mhttp[39m: GET /api/courses?p=4 200 6360 - 3.978 ms
+[2m2025-09-07-22-11-41[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.528 ms
+[2m2025-09-07-22-11-42[22m [36mhttp[39m: GET /api/courses?p=2 304 - - 4.051 ms
+[2m2025-09-07-22-11-42[22m [36mhttp[39m: GET /api/courses?p=3 304 - - 4.237 ms
+[2m2025-09-07-22-11-43[22m [36mhttp[39m: GET /api/courses?p=4 304 - - 3.885 ms
+[2m2025-09-07-22-11-47[22m [36mhttp[39m: GET /api/students?p=1 304 - - 3.691 ms
+[2m2025-09-07-22-11-51[22m [36mhttp[39m: GET /api/students/465 304 - - 2.181 ms
+[2m2025-09-07-22-11-51[22m [36mhttp[39m: GET /api/students/genders 304 - - 36.539 ms
+[2m2025-09-07-22-11-53[22m [36mhttp[39m: GET /api/students?p=1 304 - - 8.471 ms
+[2m2025-09-07-22-12-10[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 45.236 ms
+[2m2025-09-07-22-46-48[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 55.776 ms
+[2m2025-09-07-22-54-59[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 48.791 ms
+[2m2025-09-07-22-55-01[22m [36mhttp[39m: GET /api/courses/274 200 278 - 2.159 ms
+[2m2025-09-07-22-55-40[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 43.248 ms
+[2m2025-09-07-23-14-48[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 43.223 ms
+[2m2025-09-07-23-15-43[22m [36mhttp[39m: POST /api/courses 201 274 - 52.435 ms
+[2m2025-09-07-23-15-43[22m [36mhttp[39m: GET /api/courses?p=1 200 9617 - 9.354 ms
+[2m2025-09-07-23-24-43[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 42.684 ms
+[2m2025-09-07-23-24-46[22m [36mhttp[39m: GET /api/courses?p=1 304 - - 3.674 ms
+[2m2025-09-07-23-24-49[22m [36mhttp[39m: GET /api/courses/282 200 270 - 1.728 ms
+[2m2025-09-07-23-25-56[22m [36mhttp[39m: GET /api/courses/282 304 - - 34.718 ms
+[2m2025-09-07-23-26-03[22m [36mhttp[39m: GET /api/courses/282 304 - - 1.624 ms
+[2m2025-09-07-23-26-12[22m [36mhttp[39m: GET /api/courses/282 304 - - 1.842 ms
+[2m2025-09-07-23-26-17[22m [36mhttp[39m: GET /api/courses/282 304 - - 2.014 ms
+[2m2025-09-07-23-26-27[22m [36mhttp[39m: GET /api/courses/282 304 - - 37.020 ms
+[2m2025-09-07-23-26-33[22m [36mhttp[39m: GET /api/courses/282 304 - - 2.427 ms
+[2m2025-09-07-23-26-40[22m [36mhttp[39m: GET /api/courses/282 304 - - 1.309 ms
+[2m2025-09-07-23-43-16[22m [36mhttp[39m: GET /api/courses/282 304 - - 38.990 ms
+[2m2025-09-07-23-43-55[22m [36mhttp[39m: PUT /api/courses/282 200 297 - 43.768 ms
+[2m2025-09-07-23-43-55[22m [36mhttp[39m: GET /api/courses/282 200 271 - 6.290 ms
+[2m2025-09-08-07-00-12[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-07-00-12[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-07-00-46[22m [36mhttp[39m: GET /api/students/genders 304 - - 93.372 ms
+[2m2025-09-08-07-00-46[22m [36mhttp[39m: GET /api/students/282 304 - - 105.691 ms
+[2m2025-09-08-07-00-47[22m [36mhttp[39m: GET /api/courses/282 304 - - 5.402 ms
+[2m2025-09-08-07-00-49[22m [36mhttp[39m: GET /api/courses/282 304 - - 2.373 ms
+[2m2025-09-08-07-00-52[22m [36mhttp[39m: GET /api/courses?p=1 200 9618 - 10.870 ms
+[2m2025-09-08-07-01-07[22m [36mhttp[39m: GET /api/courses/244 304 - - 62.593 ms
+[2m2025-09-08-09-55-46[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-09-55-46[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-09-58-06[22m [31merror[39m: id is not defined
+[2m2025-09-08-09-58-06[22m [36mhttp[39m: POST /api/courses/272/join 500 47 - 6.529 ms
+[2m2025-09-08-09-59-37[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-09-59-37[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-09-59-52[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-09-59-52[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-00-14[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-00-14[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-00-18[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-00-18[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-00-43[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-00-43[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-00-48[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-00-48[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-01-08[22m [31merror[39m: Course with id=272 
+        of stuats is inactive or limit reached!
+        
+[2m2025-09-08-10-01-08[22m [36mhttp[39m: POST /api/courses/272/join 403 108 - 43.209 ms
+[2m2025-09-08-10-01-36[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-01-36[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-01-37[22m [31merror[39m: Course with id=272 of stuats is inactive or limit reached!
+        
+[2m2025-09-08-10-01-37[22m [36mhttp[39m: POST /api/courses/272/join 403 98 - 9.369 ms
+[2m2025-09-08-10-01-48[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-01-48[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-01-49[22m [31merror[39m: Course with id=272 of stuats is inactive or limit reached!
+[2m2025-09-08-10-01-49[22m [36mhttp[39m: POST /api/courses/272/join 403 88 - 9.501 ms
+[2m2025-09-08-10-02-39[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-02-39[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-02-44[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-02-44[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-02-46[22m [36mhttp[39m: POST /api/courses/272/join 200 79 - 8.259 ms
+[2m2025-09-08-10-03-48[22m [36mhttp[39m: POST /api/courses/272/join 200 79 - 38.435 ms
+[2m2025-09-08-10-03-58[22m [31merror[39m: Course with id=244 of stuats is limit reached!
+[2m2025-09-08-10-03-58[22m [36mhttp[39m: POST /api/courses/244/join 403 76 - 41.592 ms
+[2m2025-09-08-10-04-25[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-04-25[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-04-26[22m [31merror[39m: Course with id=244 of stuats is Inactive
+[2m2025-09-08-10-04-26[22m [36mhttp[39m: POST /api/courses/244/join 403 70 - 8.867 ms
+[2m2025-09-08-10-04-42[22m [36mhttp[39m: GET /api/courses/244 304 - - 54.757 ms
+[2m2025-09-08-10-04-49[22m [36mhttp[39m: PUT /api/courses/244 200 364 - 13.332 ms
+[2m2025-09-08-10-04-49[22m [36mhttp[39m: GET /api/courses/244 200 3123 - 1.834 ms
+[2m2025-09-08-10-04-59[22m [31merror[39m: id is not defined
+[2m2025-09-08-10-04-59[22m [36mhttp[39m: POST /api/courses/244/join 500 47 - 8.767 ms
+[2m2025-09-08-10-06-08[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-06-08[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-06-18[22m [36mhttp[39m: POST /api/courses/244/join 200 622 - 15.512 ms
+[2m2025-09-08-10-08-34[22m [36mhttp[39m: POST /api/courses/244/join 200 477 - 43.809 ms
+[2m2025-09-08-10-12-17[22m [36mhttp[39m: POST /api/courses/244/join 200 570 - 52.279 ms
+[2m2025-09-08-10-12-45[22m [36mhttp[39m: PUT /api/courses/244 200 363 - 39.001 ms
+[2m2025-09-08-10-12-45[22m [36mhttp[39m: GET /api/courses/244 200 4260 - 7.218 ms
+[2m2025-09-08-10-13-19[22m [36mhttp[39m: GET /api/students?p=1 200 6721 - 45.112 ms
+[2m2025-09-08-10-13-20[22m [36mhttp[39m: GET /api/students/genders 304 - - 3.044 ms
+[2m2025-09-08-10-13-20[22m [36mhttp[39m: GET /api/students/465 304 - - 42.646 ms
+[2m2025-09-08-10-13-22[22m [36mhttp[39m: GET /api/students?p=1 304 - - 5.675 ms
+[2m2025-09-08-10-13-25[22m [36mhttp[39m: GET /api/students/439 304 - - 1.794 ms
+[2m2025-09-08-10-13-25[22m [36mhttp[39m: GET /api/students/genders 304 - - 1.066 ms
+[2m2025-09-08-10-13-29[22m [36mhttp[39m: GET /api/students?p=1 304 - - 3.558 ms
+[2m2025-09-08-10-13-31[22m [36mhttp[39m: GET /api/students/465 304 - - 2.126 ms
+[2m2025-09-08-10-13-31[22m [36mhttp[39m: GET /api/students/genders 304 - - 40.151 ms
+[2m2025-09-08-10-13-33[22m [36mhttp[39m: GET /api/students?p=1 304 - - 8.271 ms
+[2m2025-09-08-10-13-39[22m [36mhttp[39m: GET /api/students/463 200 229 - 1.745 ms
+[2m2025-09-08-10-13-39[22m [36mhttp[39m: GET /api/students/genders 304 - - 0.727 ms
+[2m2025-09-08-10-13-42[22m [36mhttp[39m: GET /api/students?p=1 304 - - 3.924 ms
+[2m2025-09-08-10-14-01[22m [36mhttp[39m: GET /api/students/genders 304 - - 36.579 ms
+[2m2025-09-08-10-14-01[22m [36mhttp[39m: GET /api/students/452 200 220 - 40.974 ms
+[2m2025-09-08-10-14-04[22m [36mhttp[39m: GET /api/students?p=1 304 - - 4.545 ms
+[2m2025-09-08-10-14-06[22m [36mhttp[39m: GET /api/students/genders 304 - - 0.629 ms
+[2m2025-09-08-10-14-06[22m [36mhttp[39m: GET /api/students/441 200 231 - 1.958 ms
+[2m2025-09-08-10-14-36[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-14-36[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-14-46[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-14-46[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-14-47[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-14-47[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-14-59[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-14-59[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-15-02[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-15-02[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-15-06[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-15-06[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-15-15[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-15-15[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-15-23[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-15-23[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-15-27[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-15-27[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-15-31[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-15-31[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-15-34[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-15-34[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-15-46[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-15-46[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-16-09[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-16-09[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-16-18[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-16-18[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-16-23[22m [32minfo[39m: Success => connect with database
+[2m2025-09-08-10-16-23[22m [32minfo[39m: Server is running on port 3000
+[2m2025-09-08-10-16-27[22m [36mhttp[39m: GET /api/students?p=1 304 - - 15.733 ms
+[2m2025-09-08-10-16-31[22m [36mhttp[39m: GET /api/students/438 200 490 - 5.008 ms
+[2m2025-09-08-10-16-31[22m [36mhttp[39m: GET /api/students/genders 304 - - 38.052 ms
+[2m2025-09-08-10-16-32[22m [36mhttp[39m: GET /api/students?p=1 304 - - 9.534 ms
+[2m2025-09-08-10-16-35[22m [36mhttp[39m: GET /api/students/435 200 500 - 2.704 ms
+[2m2025-09-08-10-16-35[22m [36mhttp[39m: GET /api/students/genders 304 - - 3.094 ms
+[2m2025-09-08-10-16-44[22m [36mhttp[39m: GET /api/students?p=1 304 - - 4.296 ms
+[2m2025-09-08-10-16-46[22m [36mhttp[39m: GET /api/students/436 200 515 - 2.939 ms
+[2m2025-09-08-10-16-47[22m [36mhttp[39m: GET /api/students/genders 304 - - 39.937 ms
+[2m2025-09-08-10-17-09[22m [36mhttp[39m: POST /api/courses/244/join 200 192 - 44.195 ms
+[2m2025-09-08-10-17-29[22m [36mhttp[39m: GET /api/students?p=1 200 7606 - 45.341 ms
+[2m2025-09-08-10-17-31[22m [36mhttp[39m: GET /api/students/465 200 543 - 2.635 ms
+[2m2025-09-08-10-17-31[22m [36mhttp[39m: GET /api/students/genders 304 - - 35.275 ms
+[2m2025-09-08-10-17-32[22m [36mhttp[39m: GET /api/students?p=1 304 - - 8.542 ms
+[2m2025-09-08-10-17-33[22m [36mhttp[39m: GET /api/students/genders 304 - - 0.764 ms
+[2m2025-09-08-10-17-33[22m [36mhttp[39m: GET /api/students/463 200 524 - 2.492 ms
+[2m2025-09-08-10-17-35[22m [36mhttp[39m: GET /api/students?p=1 304 - - 3.926 ms
+[2m2025-09-08-10-17-36[22m [36mhttp[39m: GET /api/students/genders 304 - - 1.324 ms
+[2m2025-09-08-10-17-36[22m [36mhttp[39m: GET /api/students/452 200 515 - 3.084 ms
+[2m2025-09-08-10-17-42[22m [36mhttp[39m: GET /api/students?p=1 304 - - 4.550 ms
+[2m2025-09-08-10-17-44[22m [36mhttp[39m: GET /api/courses?p=1 200 11325 - 4.230 ms
+[2m2025-09-08-10-17-49[22m [36mhttp[39m: GET /api/courses/244 200 4831 - 2.382 ms
+[2m2025-09-08-10-17-59[22m [36mhttp[39m: GET /api/students?p=1 304 - - 3.675 ms
+[2m2025-09-08-10-18-01[22m [36mhttp[39m: GET /api/students/465 304 - - 2.464 ms
+[2m2025-09-08-10-18-01[22m [36mhttp[39m: GET /api/students/genders 304 - - 37.228 ms
+[2m2025-09-08-10-18-22[22m [36mhttp[39m: PUT /api/students/282 200 251 - 37.892 ms
+[2m2025-09-08-10-18-22[22m [36mhttp[39m: GET /api/students/282 200 1320 - 4.880 ms
