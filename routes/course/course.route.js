@@ -5,6 +5,7 @@ const {
   updateCourse,
   deleteCourse,
   joinStudents,
+  cancelJoinC,
 } = require("../../controller/course/course.controller");
 const validate = require("../../middleware/validate");
 const {
@@ -13,6 +14,7 @@ const {
   UpdateCourseSchema,
   JoinStudentsIds,
 } = require("../../validators/course.schema");
+const { StudentIdSchema } = require("../../validators/student.schema");
 
 const router = require("express").Router();
 
@@ -35,6 +37,11 @@ router.post("/:id/join",
   validate(CourseIdSchema, "params"),
   validate(JoinStudentsIds),
   joinStudents
+)
+
+router.delete("/:id/join/cancel",
+  validate(CourseIdSchema, "params"),
+  cancelJoinC
 )
 
 module.exports = router;

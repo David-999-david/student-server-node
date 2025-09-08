@@ -6,6 +6,7 @@ const {
   updateC,
   deleteC,
   joinSIds,
+  cancelJoinCourse,
 } = require("../../service/course/course.service");
 
 async function getJoinC(req, res, next) {
@@ -98,7 +99,22 @@ async function joinStudents(req, res, next) {
     return res.status(200).json({
       error: false,
       success: true,
-      data: result
+      data: result,
+    });
+  } catch (e) {
+    next(e);
+  }
+}
+
+async function cancelJoinC(req, res, next) {
+  const { id } = req.params;
+  const sId = req.body.studentId;
+  try {
+    await cancelJoinCourse(id, sId);
+    return res.status(200).json({
+      error: false,
+      success: true,
+      message: `Cancel join success sId =${sId} with cId = ${id}`,
     });
   } catch (e) {
     next(e);
@@ -112,4 +128,5 @@ module.exports = {
   updateCourse,
   deleteCourse,
   joinStudents,
+  cancelJoinC,
 };

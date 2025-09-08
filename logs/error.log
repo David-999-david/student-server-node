@@ -42,3 +42,6 @@
 [2m2025-09-08-10-03-58[22m [31merror[39m: Course with id=244 of stuats is limit reached!
 [2m2025-09-08-10-04-26[22m [31merror[39m: Course with id=244 of stuats is Inactive
 [2m2025-09-08-10-04-59[22m [31merror[39m: id is not defined
+[2m2025-09-08-18-16-59[22m [31merror[39m: Course with id=282 of stuats is Inactive
+[2m2025-09-08-21-19-17[22m [31merror[39m: invalid input syntax for type integer: "{"studentId":"263"}"
+[2m2025-09-08-21-19-28[22m [31merror[39m: invalid input syntax for type integer: "{"studentId":263}"
