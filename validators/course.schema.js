@@ -28,7 +28,7 @@ const JoinStudentsIds = z.object({
   studentIds: z
     .array(z.coerce.number().positive())
     .nonempty("At least one students must be joined")
-    .max(30, "One time only can join 30 students limit")
+    .max(100, "One time only can join 100 students limit")
     .refine((arr) => new Set(arr).size === arr.length, "Duplicate student Ids"),
 });
 

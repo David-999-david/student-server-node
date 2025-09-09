@@ -253,6 +253,79 @@ async function deleteS(id) {
   }
 }
 
+async function joinCourses(sId, cIds) {
+  const sSql = `
+  select 1 from student where id=$1 and
+  status = true
+  `;
+  const eSql = `
+  select 1 from student_course where student_id =$1 and 
+  course_id =$2
+  `;
+  const cSql = `
+  select status,student_limit,current_students from course where id =$1 for update
+  `;
+  const jSql = `
+  insert into student_course (student_id,course_id)
+  values ($1, $2) on conflict do nothing
+  returning 1
+  `;
+  const uSql = `
+  update course set
+  current_students = least(student_limit,current_students + 1)
+  where id = any($1::int[])
+  `;
+  let result = {
+    joins: [],
+    skips: [],
+  };
+  let validIds = [];
+  try {
+    const sRes = await db.query(sSql, [sId]);
+    if (sRes.rowCount !== 1) {
+      throw new ApiError(403, `Student id=${sId} is Inactive`);
+    }
+    for (let c of cIds) {
+      const eRes = await db.query(eSql, [sId, c]);
+      if (eRes.rowCount === 1) {
+        result.skips.push({ cId: c, reason: "Skip for already joined!" });
+        continue;
+      }
+      const cRes = await db.query(cSql, [c]);
+      if (cRes.rowCount !== 1) {
+        result.skips.push({ cId: c, reason: "Not found!" });
+        continue;
+      }
+      const co = cRes.rows[0];
+      if (co.status !== true) {
+        result.skips.push({ cId: c, reason: "Skip for status Inactive!" });
+        continue;
+      }
+      if (co.current_students >= co.student_limit) {
+        result.skips.push({ cId: c, reason: "Skip for limit reached!" });
+        continue;
+      }
+      const jRes = await db.query(jSql, [sId, c]);
+      if (jRes.rowCount !== 1) {
+        result.skips.push({
+          sId: sId,
+          cId: c,
+          reason: "Skip for Failed to joined!",
+        });
+        continue;
+      }
+      result.joins.push({ cId: c });
+      validIds.push(c);
+    }
+    if (validIds.length > 0) {
+      await db.query(uSql, [validIds]);
+    }
+    return result;
+  } catch (e) {
+    throw new ApiError(e.status, e.message);
+  }
+}
+
 module.exports = {
   getGender,
   getJoinStudents,
@@ -262,4 +335,5 @@ module.exports = {
   studentExist,
   getJoinStudentId,
   deleteS,
+  joinCourses,
 };

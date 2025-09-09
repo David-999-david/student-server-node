@@ -5,12 +5,14 @@ const {
   editStudent,
   getJoinSId,
   removeStudent,
+  joinC,
 } = require("../../controller/student/student.controller");
 const validate = require("../../middleware/validate");
 const {
   CreateStudentSchema,
   StudentIdSchema,
   UpdateStudentSchema,
+  JoinCourseIds,
 } = require("../../validators/student.schema");
 
 const router = require("express").Router();
@@ -34,6 +36,13 @@ router.delete(
   '/:id',
   validate(StudentIdSchema, "params"),
   removeStudent
+)
+
+router.post(
+  '/:id/join',
+  validate(StudentIdSchema, "params"),
+  validate(JoinCourseIds),
+  joinC
 )
 
 module.exports = router;

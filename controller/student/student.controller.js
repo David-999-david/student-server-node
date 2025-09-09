@@ -8,6 +8,7 @@ const {
   studentExist,
   getJoinStudentId,
   deleteS,
+  joinCourses,
 } = require("../../service/student/student.service");
 const ApiError = require("../../utils/ApiError");
 
@@ -39,11 +40,11 @@ async function getJoinS(req, res, next) {
       results = await getJoinStudents(limit, offset);
     }
     const { students, count } = results;
-    const totalPages = Math.max(1, Math.ceil(count / limit))
+    const totalPages = Math.max(1, Math.ceil(count / limit));
     return res.status(200).json({
       error: false,
       success: true,
-      meta: {totalPages, count},
+      meta: { totalPages, count },
       data: students,
     });
   } catch (e) {
@@ -126,6 +127,22 @@ async function removeStudent(req, res, next) {
   }
 }
 
+async function joinC(req, res, next) {
+  const { id } = req.params;
+  const { courseIds } = req.body;
+  try {
+    const result = await joinCourses(id, courseIds);
+    return res.status(200).json({
+      error: false,
+      success: true,
+      data: result
+    })
+  }
+  catch (e){
+    next(e);
+  }
+}
+
 module.exports = {
   allGender,
   getJoinS,
@@ -133,4 +150,5 @@ module.exports = {
   addStudents,
   editStudent,
   removeStudent,
+  joinC
 };

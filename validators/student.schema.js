@@ -22,4 +22,18 @@ const UpdateStudentSchema = StudentFields.partial()
   .refine((o) => Object.keys(o).length > 0, {
     message: "At least one field require for update!",
   });
-module.exports = { CreateStudentSchema, UpdateStudentSchema, StudentIdSchema };
+
+const JoinCourseIds = z.object({
+  courseIds: z
+    .array(z.coerce.number().positive())
+    .nonempty("At least one course must be joined")
+    .max(100, "One time only can join 100 courses limit")
+    .refine((arr) => new Set(arr).size === arr.length, "Duplicate course Ids"),
+});
+
+module.exports = {
+  CreateStudentSchema,
+  UpdateStudentSchema,
+  StudentIdSchema,
+  JoinCourseIds,
+};
