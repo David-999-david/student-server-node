@@ -67,3 +67,13 @@
 [2m2025-09-09-08-16-05[22m [31merror[39m: type "c" does not exist
 [2m2025-09-09-08-16-06[22m [31merror[39m: type "c" does not exist
 [2m2025-09-09-08-20-35[22m [31merror[39m: Student id=455 is Inactive
+[2m2025-09-09-14-52-15[22m [31merror[39m: req is not defined
+[2m2025-09-09-14-53-28[22m [31merror[39m: column "current_student" does not exist
+[2m2025-09-09-14-53-48[22m [31merror[39m: Can't find student id=465 join with course id=282
+[2m2025-09-09-14-54-25[22m [31merror[39m: Failed to decrease current students in course with id=274
+        when cancel join with student id=465
+        
+[2m2025-09-09-14-56-30[22m [31merror[39m: Can't find student id=465 join with course id=274
+[2m2025-09-09-14-57-17[22m [31merror[39m: Failed to decrease current students in course with id=274
+        when cancel join with student id=466
+        

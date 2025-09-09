@@ -9,6 +9,7 @@ const {
   getJoinStudentId,
   deleteS,
   joinCourses,
+  cancelJoinStudent,
 } = require("../../service/student/student.service");
 const ApiError = require("../../utils/ApiError");
 
@@ -135,10 +136,24 @@ async function joinC(req, res, next) {
     return res.status(200).json({
       error: false,
       success: true,
-      data: result
-    })
+      data: result,
+    });
+  } catch (e) {
+    next(e);
   }
-  catch (e){
+}
+
+async function cancelJoinS(req, res, next) {
+  const { id } = req.params;
+  const courseId = req.body.courseId;
+  try {
+    await cancelJoinStudent(id, courseId);
+    return res.status(200).json({
+      error: false,
+      success: true,
+      message: `Cancel join success sId =${id} with cId = ${courseId}`,
+    });
+  } catch (e) {
     next(e);
   }
 }
@@ -150,5 +165,6 @@ module.exports = {
   addStudents,
   editStudent,
   removeStudent,
-  joinC
+  joinC,
+  cancelJoinS,
 };

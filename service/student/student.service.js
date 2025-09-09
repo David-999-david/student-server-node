@@ -326,6 +326,49 @@ async function joinCourses(sId, cIds) {
   }
 }
 
+async function cancelJoinStudent(sId, cId) {
+  const eSql = `select 1 from student_course where student_id =$1 and course_id=$2`;
+  const cSql = `
+  delete from student_course where
+  student_id=$1 and course_id=$2
+  `;
+  const dSql = `
+  update course set
+  current_students = greatest(1,current_students - 1),
+  updated_at = now()
+  where id = $1
+  returning 1
+  `;
+  try {
+    const eRes = await db.query(eSql, [sId, cId]);
+    if (eRes.rowCount !== 1) {
+      throw new ApiError(
+        404,
+        `Can't find student id=${sId} join with course id=${cId}`
+      );
+    }
+    const cRes = await db.query(cSql, [sId, cId]);
+    if (cRes.rowCount !== 1) {
+      throw new ApiError(
+        500,
+        `Failed to 
+      cancel join student id=${sId} with course id=${cId}`
+      );
+    }
+    const dRes = await db.query(dSql, [cId]);
+    if (dRes.rowCount !== 1) {
+      throw new ApiError(
+        500,
+        `Failed to decrease current students in course with id=${cId}
+        when cancel join with student id=${sId}
+        `
+      );
+    }
+  } catch (e) {
+    throw new ApiError(e.status, e.message);
+  }
+}
+
 module.exports = {
   getGender,
   getJoinStudents,
@@ -336,4 +379,5 @@ module.exports = {
   getJoinStudentId,
   deleteS,
   joinCourses,
+  cancelJoinStudent,
 };

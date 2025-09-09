@@ -6,6 +6,7 @@ const {
   getJoinSId,
   removeStudent,
   joinC,
+  cancelJoinS,
 } = require("../../controller/student/student.controller");
 const validate = require("../../middleware/validate");
 const {
@@ -32,17 +33,19 @@ router.put(
   editStudent
 );
 
-router.delete(
-  '/:id',
-  validate(StudentIdSchema, "params"),
-  removeStudent
-)
+router.delete("/:id", validate(StudentIdSchema, "params"), removeStudent);
 
 router.post(
-  '/:id/join',
+  "/:id/join",
   validate(StudentIdSchema, "params"),
   validate(JoinCourseIds),
   joinC
-)
+);
+
+router.delete(
+  "/:id/join/cancel",
+  validate(StudentIdSchema, "params"),
+  cancelJoinS
+);
 
 module.exports = router;
