@@ -6,6 +6,7 @@ const router = require("./routes");
 const logger = require("./libs/logger");
 const ErrorHandler = require("./middleware/errorHandler");
 require("dotenv").config();
+const cookieParser = require("cookie-parser");
 
 const app = express();
 app.use(express.json());
@@ -13,10 +14,13 @@ app.use(express.json());
 app.use(
   cors({
     origin: "http://localhost:4200",
+    credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+app.use(cookieParser());
 
 app.use(
   morgan(":method :url :status :res[content-length] - :response-time ms", {

@@ -77,3 +77,7 @@
 [2m2025-09-09-14-57-17[22m [31merror[39m: Failed to decrease current students in course with id=274
         when cancel join with student id=466
         
+[2m2025-09-10-16-19-32[22m [31merror[39m: data and salt arguments required
+[2m2025-09-10-16-30-04[22m [31merror[39m: Cannot access 'user' before initialization
+[2m2025-09-10-21-13-08[22m [31merror[39m: "expiresIn" should be a number of seconds or string representing a timespan eg: "1d", "20h", 60
+[2m2025-09-10-21-13-41[22m [31merror[39m: "expiresIn" should be a number of seconds or string representing a timespan eg: "1d", "20h", 60
