@@ -7,6 +7,7 @@ const {
   joinStudents,
   cancelJoinC,
 } = require("../../controller/course/course.controller");
+const checkAuth = require("../../middleware/auth.middle");
 const validate = require("../../middleware/validate");
 const {
   CreateCourseSchema,
@@ -17,6 +18,8 @@ const {
 const { StudentIdSchema } = require("../../validators/student.schema");
 
 const router = require("express").Router();
+
+router.use(checkAuth);
 
 router.get("", getJoinC);
 
@@ -33,15 +36,17 @@ router.put(
 
 router.delete("/:id", validate(CourseIdSchema, "params"), deleteCourse);
 
-router.post("/:id/join",
+router.post(
+  "/:id/join",
   validate(CourseIdSchema, "params"),
   validate(JoinStudentsIds),
   joinStudents
-)
+);
 
-router.delete("/:id/join/cancel",
+router.delete(
+  "/:id/join/cancel",
   validate(CourseIdSchema, "params"),
   cancelJoinC
-)
+);
 
 module.exports = router;

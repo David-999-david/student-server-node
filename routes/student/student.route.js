@@ -8,6 +8,7 @@ const {
   joinC,
   cancelJoinS,
 } = require("../../controller/student/student.controller");
+const checkAuth = require("../../middleware/auth.middle");
 const validate = require("../../middleware/validate");
 const {
   CreateStudentSchema,
@@ -17,6 +18,8 @@ const {
 } = require("../../validators/student.schema");
 
 const router = require("express").Router();
+
+router.use(checkAuth);
 
 router.get("/genders", allGender);
 
@@ -47,5 +50,6 @@ router.delete(
   validate(StudentIdSchema, "params"),
   cancelJoinS
 );
+
 
 module.exports = router;

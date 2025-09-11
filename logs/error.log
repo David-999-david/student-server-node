@@ -81,3 +81,18 @@
 [2m2025-09-10-16-30-04[22m [31merror[39m: Cannot access 'user' before initialization
 [2m2025-09-10-21-13-08[22m [31merror[39m: "expiresIn" should be a number of seconds or string representing a timespan eg: "1d", "20h", 60
 [2m2025-09-10-21-13-41[22m [31merror[39m: "expiresIn" should be a number of seconds or string representing a timespan eg: "1d", "20h", 60
+[2m2025-09-11-09-51-43[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-09-52-27[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-09-53-01[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-09-55-54[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-10-00-11[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-10-00-57[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-10-01-26[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-10-02-02[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-10-08-46[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-10-09-15[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-10-09-16[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-10-09-17[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-10-09-17[22m [31merror[39m: Invalid or expired refresh Token
+[2m2025-09-11-20-10-28[22m [31merror[39m: Cannot destructure property 'access' of '(intermediate value)' as it is undefined.
+[2m2025-09-11-20-19-54[22m [31merror[39m: Password is incorrect!

@@ -49,4 +49,31 @@ async function refreshS(oldRefresh) {
   return { access, refresh };
 }
 
-module.exports = { createUser, refreshS };
+async function loginS(user) {
+  const eSql = `
+    select id, password from users
+    where email = $1
+    `;
+  try {
+    const eRes = await db.query(eSql, [user.email]);
+    if (eRes.rowCount !== 1) {
+      throw new ApiError(404, `User with email=${user.email} not found!`);
+    }
+    const inpuPsw = user.password;
+    const password = eRes.rows[0].password;
+
+    const match = await bcrypt.compare(inpuPsw, password);
+    if (!match) {
+      throw new ApiError(403, "Password is incorrect!");
+    }
+    const userId = eRes.rows[0].id;
+    const access = signAccessToken(userId);
+    const refresh = signRefreshToken(userId);
+
+    return { access, refresh };
+  } catch (e) {
+    throw new ApiError(e.status, e.message);
+  }
+}
+
+module.exports = { createUser, refreshS, loginS };
